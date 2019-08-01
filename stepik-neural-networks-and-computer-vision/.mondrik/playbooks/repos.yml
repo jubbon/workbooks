@@ -1,0 +1,10 @@
+---
+
+  - name: Обновление репозиториев
+    hosts: localhost
+    gather_facts: no
+    roles:
+      - role: mondrik.git
+        origin: github
+        project: SlinkoIgor/Neural_Networks_and_CV
+        destination: "{{ current_directory }}/repos"

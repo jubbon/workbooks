@@ -1,0 +1,40 @@
+---
+
+  - name: Настройка рабочего окружения Visual Studio Code
+    hosts: localhost
+    gather_facts: no
+    roles:
+      - role: mondrik.vscode-workspace
+        workspace_name: stepik-neural-network
+        workspace_directory: "{{ current_directory }}"
+        git:
+          ignoreLimitWarning: !!str true
+        python:
+          version: 3.7.0
+          origin: /opt/anaconda/anaconda-python-3.7
+          linting:
+            flake8:
+              - "--max-line-length=120"
+          formatting:
+            yapf:
+              style: chromium
+
+
+      - role: mondrik.vscode-workspace-terminal
+        uid: kaggle-plates-v2
+        title: Kaggle Plates v2 competition
+        description: Final task based on Kaggle competition
+        cwd: source/final-kaggle-platesv2
+        history:
+          - jupyter notebook --notebook-dir=./kernels
+        python:
+          version: 3.7.0
+          origin: /opt/anaconda/anaconda-python-3.7
+          packages:
+             conda:
+               channels:
+                 - pytorch
+               dependencies:
+                 - jupyter
+                 - pytorch-cpu
+                 - torchvision-cpu
