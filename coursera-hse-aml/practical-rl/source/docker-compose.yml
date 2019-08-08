@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  practical_rl:
+    image: justheuristic/practical_rl
+    command: sh ../run_jupyter.sh
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/notebooks

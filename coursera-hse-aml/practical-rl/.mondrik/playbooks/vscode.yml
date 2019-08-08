@@ -1,0 +1,12 @@
+---
+
+  - name: Настройка рабочего окружения Visual Studio Code
+    hosts: localhost
+    gather_facts: no
+    roles:
+      - role: mondrik.vscode-workspace
+        workspace_name: coursera-hse-aml-practical-rl
+        workspace_directory: "{{ current_directory }}"
+        git:
+          ignoreLimitWarning: !!str true
+

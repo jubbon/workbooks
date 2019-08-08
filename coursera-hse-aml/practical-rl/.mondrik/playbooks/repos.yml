@@ -1,0 +1,41 @@
+---
+
+  - name: Обновление репозиториев
+    hosts: localhost
+    gather_facts: no
+    roles:
+      - role: mondrik.git
+        origin: github
+        project: yandexdataschool/practical_rl
+        version: master
+        destination: "{{ current_directory }}/repos/yandexdataschool/practical-rl/master"
+
+      - role: mondrik.git
+        origin: github
+        project: yandexdataschool/practical_rl
+        version: coursera
+        destination: "{{ current_directory }}/repos/yandexdataschool/practical-rl/coursera"
+
+      - role: mondrik.git
+        origin: github
+        project: yandexdataschool/practical_rl
+        version: coursera-deployed
+        destination: "{{ current_directory }}/repos/yandexdataschool/practical-rl/coursera-deployed"
+
+      - role: mondrik.git
+        origin: github
+        project: yandexdataschool/practical_rl
+        version: policy-based-optional
+        destination: "{{ current_directory }}/repos/yandexdataschool/practical-rl/policy-based-optional"
+
+      - role: mondrik.git
+        origin: github
+        project: yandexdataschool/practical_rl
+        version: spring19-pacman-visualization
+        destination: "{{ current_directory }}/repos/yandexdataschool/practical-rl/spring19-pacman-visualization"
+
+      - role: mondrik.git
+        origin: github
+        project: yandexdataschool/practical_rl
+        version: week02_to_coursera
+        destination: "{{ current_directory }}/repos/yandexdataschool/practical-rl/week02_to_coursera"
